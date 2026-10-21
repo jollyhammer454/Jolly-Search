@@ -1,9 +1,0 @@
-{
-  "name": "jolly-search-engine",
-  "version": "1.0.0",
-  "description": "Jolly Search Engine with Serverless AI Overview",
-  "main": "index.html",
-  "dependencies": {
-    "@google/generative-ai": "^0.21.0"
-  }
-}
