@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Web Assistant</title>
+</head>
+<body>
+  <h1>Ask the AI</h1>
+  <input type="text" id="userInput" placeholder="Ask something..." style="width: 300px; padding: 8px;">
+  <button onclick="sendPrompt()">Send</button>
+  <p id="responseOutput"></p>
+
+  <script>
+    async function sendPrompt() {
+      const input = document.getElementById('userInput').value;
+      const output = document.getElementById('responseOutput');
+      output.innerText = 'Thinking...';
+
+      try {
+        const res = await fetch('/.netlify/functions/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt: input })
+        });
+        const data = await res.json();
+        
+        if (data.reply) {
+          output.innerText = data.reply;
+        } else {
+          output.innerText = 'Error: ' + (data.error || 'Failed to fetch response.');
+        }
+      } catch (err) {
+        output.innerText = 'Network error occurred.';
+      }
+    }
+  </script>
+</body>
+</html>
