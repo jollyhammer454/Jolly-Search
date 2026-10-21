@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jolly Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+    .search-container {
+      text-align: center;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #008080;
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 12px 16px;
+      font-size: 1rem;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input[type="text"]:focus {
+      border-color: #008080;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 1rem;
+      color: #ffffff;
+      background-color: #008080;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-left: 8px;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: #005959;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="search-container">
+    <h1>Jolly Search</h1>
+    <form action="results.html" method="GET" target="_blank">
+      <input type="text" name="q" placeholder="Ask Jolly anything..." required />
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+</body>
+</html>
